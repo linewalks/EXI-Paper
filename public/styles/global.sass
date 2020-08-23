@@ -1,0 +1,71 @@
+@import '~MDwalks-UI/src/assets/styles/variables.sass'
+@import '~antd/dist/antd.css'
+@import '~MDwalks-UI/src/assets/styles/reset.css'
+@import '~MDwalks-UI/src/assets/styles/form.reset.css'
+@import '~MDwalks-UI/src/assets/styles/form.sass'
+
+
+#__next 
+  min-height: 100%
+  padding-bottom: 140px
+  position: relative
+  box-sizing: border-box
+
+*
+  box-sizing: border-box
+
+@each $width in (430, 800, 1200)
+  .wrap_#{$width}
+    max-width: #{$width}px
+    width: #{$width}px
+    margin: 0 auto
+
+.text-left
+  text-align: left
+
+.text-center
+  text-align: center
+
+.display-block, .bl
+  display: block
+
+.border-bottom
+  border-bottom: 1px solid $line_search_grey
+
+.border-bottom-azure
+  border-bottom: 1px solid rgba($azure, 0.2)
+
+.hide
+  display: none
+
+.bold 
+  font-weight: bold
+
+$spaceamounts: (2, 4, 5, 8, 9, 10, 12, 14, 15, 16, 20, 24, 25, 30, 32, 35, 40, 45, 48, 50, 56, 60, 70, 75, 80, 90, 100) // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right) // Leave this variable alone
+
+@each $space in $spaceamounts
+  @each $side in $sides
+    .m#{str-slice($side, 0, 1)}#{$space}
+      margin-#{$side}: #{$space}px !important
+  
+    .p#{str-slice($side, 0, 1)}#{$space}
+      padding-#{$side}: #{$space}px !important
+
+html, body
+  height: 100%
+
+#container
+  min-height: 100%
+  // background-color: $primary_white
+  padding-bottom: $footer-height + $footer_margin_top
+  position: relative
+  box-sizing: border-box
+
+form
+  select
+    &:disabled
+      transition: background-color 0.5s ease//, color 0.5s ease
+
+button:disabled
+  cursor: not-allowed
