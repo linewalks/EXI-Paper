@@ -5,7 +5,6 @@ import fontStyle from 'MDwalks-UI/src/assets/styles/font.module.sass'
 import _ from 'lodash'
 import styled from 'styled-components'
 import tableDataC1 from '@components/data/dataForCohortListPage1'
-import tableDataC2 from '@components/data/dataForCohortListPage2'
 
 const SearchBarBox = styled.article.attrs({
   className: fontStyle.fs14,
@@ -75,18 +74,16 @@ class CohortList extends Component {
 
   getDataForTable = (param) => {
     // only two pages are provided
-    if (param.page == 2){
-      this.setState({
-        dataForTable : tableDataC2,
-      })
-      
-    }
-    else {
-      this.setState({
-        dataForTable : tableDataC1,
-      })
-      
-    }
+    const newCohortList = tableDataC1.rowData.slice((param.page - 1) * param.length, (param.page - 1) * param.length + param.length)
+    this.setState({
+      dataForTable : {
+        header: tableDataC1.header,
+        rowData: newCohortList,
+        totalRows: tableDataC1.totalRows
+      }
+    })
+    
+    
   }
 
 

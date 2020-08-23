@@ -28,6 +28,10 @@ export default {
   {
     'pattern': 'ischemic_hd -> Chemistry Troponin T -> ECG -> CABG',
     'support': 0.045
+  },
+  {
+    'pattern': 'ischemic_hd -> Chemistry Troponin T -> CABG -> Aspirin',
+    'support': 0.046
   }],
-  totalRows: 11,
+  totalRows: 12,
 };
