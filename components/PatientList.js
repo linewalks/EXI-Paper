@@ -2,9 +2,19 @@ import React, { Component } from 'react';
 import { Table, Pagination } from 'MDwalks-UI'
 import fontStyle from 'MDwalks-UI/src/assets/styles/font.module.sass'
 import _ from 'lodash'
+import styled from 'styled-components'
 import tableDataP from '@components/data/dataForPatientList'
 
+const SearchBarBox = styled.article.attrs({
+  className: fontStyle.fs14,
+})`
+  display: flex;
+  align-items: center;
 
+  dl, dt, dd {
+    display: inline-block;
+  }
+`
 
 class PatientList extends Component {
   constructor(props) {
@@ -95,15 +105,17 @@ class PatientList extends Component {
     return (
       <div className="wrap_1200">
         <p className={`${fontStyle.fs14} ${fontStyle.fc_grey08}`}>Patient List</p>
-        <dl>
-          <dt className={fontStyle.fc_grey08}>Cohort</dt>
-          <dd className={`ml14 ${fontStyle.fc_grey09}`}>
-            {
-              dataForTable !== null
-              && <span>{dataForTable.totalRows.toLocaleString()}</span>
-            }
-          </dd>
-        </dl>
+        <SearchBarBox>
+          <dl>
+            <dt className={fontStyle.fc_grey08}>Patient</dt>
+            <dd className={`ml14 ${fontStyle.fc_grey09}`}>
+              {
+                dataForTable !== null
+                && <span>{dataForTable.totalRows.toLocaleString()}</span>
+              }
+            </dd>
+          </dl>
+        </SearchBarBox>
         <div className="mt16">
           {
 

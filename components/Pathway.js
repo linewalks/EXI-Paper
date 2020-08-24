@@ -13,26 +13,33 @@ class Pathway extends Component {
     super(props);
     this.state = {
       sankeyData: pathway,
-      selectedNodes: ['ischemic_hd', 'Chemistry Troponin T', 'ECG', 'CABG'],
+      selectedNodes: [],
     }
   }
   render() {
     const { sankeyData, selectedNodes } = this.state
     return (
-        <div>
-      
-      
-    
+      <div>
+      <div style={{ display: 'flex', justifyContent: 'center'}}>
+
         {
           !_.isNull(sankeyData) && (
             <SankeyChart
+              onChange={(nodes) => {
+                console.log('nodes', nodes)
+                this.setState({
+                    selectedNodes: nodes
+                })
+              }}
               data={sankeyData}
               selectedNodes={selectedNodes}
             />
           )
         }
-        <PatientList keyword={selectedNodes}/>
-    </div>
+        
+      </div>
+      <PatientList keyword={selectedNodes} />
+      </div>
     )
   }
 }
