@@ -23,7 +23,7 @@ const PathwayPage = () => {
       </style>
       <GNB/>
       <header className="mt40 wrap_1200">
-        <Heading size="32" style={{ color: colorV1.$grey10 }}>Cohort Pathway</Heading>
+        <Heading size="32" style={{ color: colorV1.$grey10 }}>Pathway Patterns</Heading>
       </header>
       <section>
         <CohortList/>

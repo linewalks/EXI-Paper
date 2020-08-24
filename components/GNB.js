@@ -13,7 +13,7 @@ class GNB extends Component {
   render() {
     return (
       <Navbar>
-        <Link href="/paper1"><a><Button variant="primary">Pathway</Button></a></Link>
+        <Link href="/paper1"><a><Button variant="primary">Pathway Patterns</Button></a></Link>
         <Link href="/paper2"><a><Button variant="primary">Attention</Button></a></Link>
       </Navbar>
     )

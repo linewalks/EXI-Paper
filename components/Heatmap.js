@@ -172,6 +172,8 @@ class Heatmap extends Component {
     return (
       <div
         style={{
+          display: 'flex', 
+          justifyContent: 'center',
           width: '900px',
           height: '1200px',
         }}

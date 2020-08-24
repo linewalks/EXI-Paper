@@ -106,12 +106,11 @@ class CohortList extends Component {
     console.log
     return (
       <div className="wrap_1200">
-        <p className={`${fontStyle.fs14} ${fontStyle.fc_grey08}`}>Cohort List</p>
 
         <div className="mt32">
           <SearchBarBox>
             <dl>
-              <dt className={fontStyle.fc_grey08}>Cohort</dt>
+              <dt className={fontStyle.fc_grey08}>Pathway Patterns</dt>
               <dd className={`ml14 ${fontStyle.fc_grey09}`}>
                 {
                   dataForTable !== null
