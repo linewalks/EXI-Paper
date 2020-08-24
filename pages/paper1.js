@@ -8,7 +8,7 @@ const { colorV1 } = variables
 
 const Pathway = dynamic(() => import('@components/Pathway'))
 const CohortList = dynamic(() => import('@components/CohortList'))
-
+const GNB = dynamic(() => import('@components/GNB'))
 
 const PathwayPage = () => {
 
@@ -21,10 +21,7 @@ const PathwayPage = () => {
           }
         `}
       </style>
-      <Navbar>
-        <Button variant="primary" onClick={() => console.log('Clicked button1.')}>Pathway</Button>
-        <Button onClick={() => console.log('Clicked button2.')}>Attention</Button>
-      </Navbar>
+      <GNB/>
       <header className="mt40 wrap_1200">
         <Heading size="32" style={{ color: colorV1.$grey10 }}>Cohort Pathway</Heading>
       </header>

@@ -6,9 +6,10 @@ const { colorV1 } = variables
 
 
 const Heatmap = dynamic(() => import('@components/Heatmap'))
+const GNB = dynamic(() => import('@components/GNB'))
 
 
-const HeatmapPage = ({ dataSource }) => {
+const HeatmapPage = () => {
   return (
     <div>
       <style global jsx>
@@ -18,15 +19,12 @@ const HeatmapPage = ({ dataSource }) => {
           }
         `}
       </style>
-      <Navbar>
-        <Button onClick={() => console.log('Clicked button1.')}>Pathway</Button>
-        <Button variant="primary" onClick={() => console.log('Clicked button2.')}>Attention</Button>
-      </Navbar>
+      <GNB />
       <header className="mt40 wrap_1200">
-      <Heading size="32" style={{ color: colorV1.$grey10 }}>Attention Heatmap</Heading>
-    </header>
-      <section><Heatmap/></section>
-      
+        <Heading size="32" style={{ color: colorV1.$grey10 }}>Attention Heatmap</Heading>
+      </header>
+      <section><Heatmap /></section>
+
 
     </div>
   )

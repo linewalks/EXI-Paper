@@ -11,7 +11,6 @@ import PatientList from '@components/PatientList'
 class Pathway extends Component {
   constructor(props) {
     super(props);
-    const { subjectId } = this.props
     this.state = {
       sankeyData: pathway,
       selectedNodes: ['ischemic_hd', 'Chemistry Troponin T', 'ECG', 'CABG'],
