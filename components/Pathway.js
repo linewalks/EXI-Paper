@@ -3,13 +3,19 @@ import {
   SankeyChart,
   SelectedCard,
   Table,
-  Pagination
+  Pagination,
+  Heading,
+  variables,
+  Button,
+  SelectBox
 } from 'MDwalks-UI'
 import fontStyle from 'MDwalks-UI/src/assets/styles/font.module.sass'
 import pathway from '@components/data/dataForSankey2'
 import _ from 'lodash'
 import styled from 'styled-components'
 import tableDataP from '@components/data/dataForPatientList'
+
+const { colorV1 } = variables
 
 const SearchBarBox = styled.article.attrs({
   className: fontStyle.fs14,
@@ -74,7 +80,7 @@ class Pathway extends Component {
 
     this.setState({
       dataForTable: {
-        header: ['subject_id', 'hadm_id', "sequence"],
+        headers: ['subject_id', 'hadm_id', "sequence"],
         rowData: newPatientList.slice((param.page - 1) * param.length, (param.page - 1) * param.length + param.length),
         totalRows: newPatientList.length
       },
@@ -124,6 +130,9 @@ class Pathway extends Component {
           }
 
         </div>
+        <header className="mt40 wrap_1200">
+          <Heading size="25" style={{ color: colorV1.$grey10 }}>Step 3. Patient Identification by Selecting Pathway</Heading>
+        </header>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <SelectedCard selectedElement={selectedNodes} isLastHighlighted={true} />
         </div>
@@ -167,6 +176,40 @@ class Pathway extends Component {
             }
 
           </div>
+        </div>
+        <header className="mt40 wrap_1200">
+          <Heading size="25" style={{ color: colorV1.$grey10 }}>Step 4. Training Model with Selected Patients</Heading>
+        </header>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <SelectBox>
+          <select>
+            <option value="concept_id">LSTM layer size(s)</option>
+            <option value="concept_id">128</option>
+            <option value="kcd">64</option>
+          </select>
+        </SelectBox>
+        <SelectBox>
+          <select>
+            <option value="concept_id">Number of Epochs</option>
+            <option value="concept_id">5</option>
+            <option value="kcd">10</option>
+          </select>
+        </SelectBox>
+        <SelectBox>
+          <select>
+            <option value="concept_id">Batch Size</option>
+            <option value="concept_id">128</option>
+            <option value="kcd">256</option>
+          </select>
+        </SelectBox>
+        <SelectBox>
+          <select>
+            <option value="concept_id">Learning Rate</option>
+            <option value="concept_id">1e-2</option>
+            <option value="kcd">1e-3</option>
+          </select>
+        </SelectBox>
+        <Button variant="primary">Train Model</Button>
         </div>
       </div>
     )

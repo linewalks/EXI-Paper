@@ -77,7 +77,7 @@ class CohortList extends Component {
     const newCohortList = tableDataC1.rowData.slice((param.page - 1) * param.length, (param.page - 1) * param.length + param.length)
     this.setState({
       dataForTable : {
-        header: tableDataC1.header,
+        headers: tableDataC1.header,
         rowData: newCohortList,
         totalRows: tableDataC1.totalRows
       }
@@ -99,11 +99,9 @@ class CohortList extends Component {
     this.getDataForTable({ ...defaultParam})
   }
 
-  getTableId = (text) => text.replace(/\s+/, '')[0].toLowerCase() + text.replace(/\s+/, '').slice(1)
 
   render() {
     const { dataForTable, selectPage, keyword } = this.state
-    console.log
     return (
       <div className="wrap_1200">
 

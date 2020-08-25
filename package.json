@@ -1,7 +1,7 @@
 {
   "name": "exi-paper",
   "version": "0.0.1",
-  "main": "paper1.js",
+  "main": "index.js",
   "private": true,
   "license": "MIT",
   "dependencies": {

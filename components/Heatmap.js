@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import diffHeatmapData from '@components/data/dataForHeatmapDayCls';
+import { SelectBox } from 'MDwalks-UI'
+import grpHeatmapData from '@components/data/dataForHeatmap';
+import p9 from '@components/data/dataForHeatmap9';
+import p13 from '@components/data/dataForHeatmap13';
+import p102 from '@components/data/dataForHeatmap102';
 import metadata from '@components/data/dataForMetadata';
 import * as core from 'd3';
 import _ from 'lodash';
@@ -10,7 +14,7 @@ class Heatmap extends Component {
     super(props);
     this.state = {
       threshold: 0.0,
-      data: diffHeatmapData,
+      data: grpHeatmapData,
     };
     this.d3 = { ...core };
   }
@@ -40,6 +44,7 @@ class Heatmap extends Component {
 
     // Read the data
     const { data } = this.state;
+    console.log(data[10])
     // Labels of row and columns -> unique identifier of the column called 'group' and 'variable'
     const myGroups = d3
       .map(data, (d) => d.group)
@@ -168,20 +173,42 @@ class Heatmap extends Component {
     this.renderHeatmap(event.target.value);
   }
 
+  changeHeatmap(event) {
+    this.removeHeatmap();
+    console.log(event.target.value, "patient selected");
+    var p = grpHeatmapData
+    if (event.target.value === 0)
+      p = grpHeatmapData
+    else if (event.target.value == 9)
+      p = p9
+    else if (event.target.value == 13)
+      p = p13
+    else if (event.target.value == 102)
+      p = p102
+    this.setState({
+      data: p
+    });
+
+    this.renderHeatmap(0.0);
+  }
+
   render() {
     return (
-      <div
-        style={{
-          display: 'flex', 
-          justifyContent: 'center',
-          width: '900px',
-          height: '1200px',
-        }}
-      >
-        <div id="slider">
-          {/* <SelectBox> */}
+      <div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <span>Select patient: </span>
+          <SelectBox>
+            <select onChange={this.changeHeatmap.bind(this)}>
+              <option value={0}>All Patients</option>
+              <option value={9}>9</option>
+              <option value={13}>13</option>
+              <option value={102}>102</option>
+            </select>
+          </SelectBox>
+
+          <span>Select theshold: </span>
+          <SelectBox>
             <select
-              className="select-board-size"
               onChange={this.changeThreshold.bind(this)}
             >
               {_.range(0, 1 + 0.2, 0.2).map((value) => (
@@ -190,10 +217,19 @@ class Heatmap extends Component {
                 </option>
               ))}
             </select>
-          {/* </SelectBox> */}
-
+          </SelectBox>
         </div>
-        <div id="heatmapWrap" />
+        <div
+          style={
+            {
+              display: 'flex',
+              justifyContent: 'center',
+              width: '1500px',
+              height: '1200px',
+            }}
+        >
+          <div id="heatmapWrap" />
+        </div>
       </div>
     );
   }
