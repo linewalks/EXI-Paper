@@ -30,7 +30,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint ./components/**/*.js",
