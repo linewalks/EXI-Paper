@@ -1,43 +1,38 @@
+## Boosting Patient Labeling Process with Visual Analytics for Electronic Health Records
+
+Cinyoung Hur1, JeongA Wi2, YoungBin Kim2,*
+
+1 Linewalks, 8F, 5, Teheran-ro 14-gil, Gangnam-gu, Seoul, 06235 Republic of Korea
+2 Graduate School of Advanced Imaging Science, Multimedia & Film, Chung-Ang University 84, Heukseok-ro, Dongjak-gu, Seoul, 06974 Republic of Korea
+*ybkim85@cau.ac.kr
+
+### ABSTRACT
+Use of electronic health record (EHR) data for planning is a key area of research. We aimed to increase the efficiency of iteratively applying data-intensive technology and verifying the results for complex and big EHR data. We used a system of sequence mining, interpretable deep learning models, and visualization on data extracted from the MIMIC-III database for a group of patients diagnosed with heart disease. The results of sequence mining corresponded to specific pathways of interest to medical staff and were used to select patient groups that went through these pathways. An interactive Sankey diagram representing these pathways and a heatmap visually representing the weight of each variable were developed for temporal and quantitative illustration. We applied the proposed system to predict unplanned cardiac surgery, using clinical pathways determined by sequence pattern mining to select cardiac surgery from complex EHRs to label subject groups and deep learning models. The proposed system aids in the selection of pathway-based patient groups, simplification of labelling, and exploratory interpretation of modelling results. The proposed system can help medical staff explore various pathways that patients have gone through and further facilitate the testing of various clinical hypotheses using big data in the medical domain.
+
+--- 
+
 ## Prerequisites
-1. Node.js 최신 버전을 설치하세요 (NVM을 이용해서 설치하는 것을 추천합니다.)
+1. Install latest version of Node.js
 
     `https://github.com/creationix/nvm`
 
-    * NVM 을 통한 Node.js 설치
+    * install using NVM
 
         `nvm install node`
 
-2. Node Package Manager인 Yarn을 설치하세요
+2. Install Node Package Manager
 
     `npm install -g yarn`
 
 ## Installation guide
 
-1. `git clone http://ljunghan@yona.linewalks.com/MDwalks_for_CDM/EXI-Client`
+1. `git clone https://github.com/linewalks/EXI-Paper`
 
-2. `cd EXI-Client`
+2. `cd EXI-Paper`
 
 3. `yarn install`
 
 4. `yarn dev`
 
-5. `localhost:3000`에서 구동 확인!
+5. `http://localhost:3000`
 
-## Release
-
-1. `rm -rf .next/`
-2. `rm -rf node_modules/`
-3. `rm yarn.lock`
-4. `yarn`
-5. `yarn build`
-6. `yarn start`
-
-## Versioning
-
-1. git checkout -b {branch}
-2. `yarn version` - update version 입력(package.json 버전 업데이트, git tag 달림)
-3. git push origin --tags
-4. git push origin {branch}
-
-## Version 파악
-`yarn get-version`

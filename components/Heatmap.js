@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SelectBox } from 'MDwalks-UI'
+import { SelectBox, Heading, variables } from 'MDwalks-UI'
 import grpHeatmapData from '@components/data/dataForHeatmap';
 import p9 from '@components/data/dataForHeatmap9';
 import p13 from '@components/data/dataForHeatmap13';
@@ -7,7 +7,8 @@ import p102 from '@components/data/dataForHeatmap102';
 import metadata from '@components/data/dataForMetadata';
 import * as core from 'd3';
 import _ from 'lodash';
-// import SelectBox from 'MDwalks-UI/src/components/form/SelectBox'
+
+const { colorV1 } = variables
 
 class Heatmap extends Component {
   constructor(props) {
@@ -192,11 +193,19 @@ class Heatmap extends Component {
     this.renderHeatmap(0.0);
   }
 
+  steps= (text) => {
+    return (
+      <header className="mt40 wrap_1200">
+          <Heading size="25" style={{ color: colorV1.$grey10 }}>{text}</Heading>
+      </header>
+    )
+  }
+
   render() {
     return (
       <div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <span>Select patient: </span>
+        {this.steps("Step 4. Exploring Model Interpretability")}
+        <div style={{ display: 'flex', justifyContent: 'center' , marginTop: '25px' }}>
           <SelectBox>
             <select onChange={this.changeHeatmap.bind(this)}>
               <option value={0}>All Patients</option>
@@ -206,11 +215,11 @@ class Heatmap extends Component {
             </select>
           </SelectBox>
 
-          <span>Select theshold: </span>
           <SelectBox>
             <select
               onChange={this.changeThreshold.bind(this)}
             >
+              <option value={0}>Threshold</option>
               {_.range(0, 1 + 0.2, 0.2).map((value) => (
                 <option key={value.toFixed(2)} value={value}>
                   {value.toFixed(2)}

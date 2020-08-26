@@ -22,21 +22,17 @@ const PathwayPage = () => {
         `}
       </style>
       <header className="mt40 wrap_1200">
-        <Heading size="32" style={{ color: colorV1.$grey10 }}>Patient Identification using Clinical Pathway</Heading>
+        <Heading size="30" style={{ color: colorV1.$grey10 }}>
+          Boosting Patient Labeling Process with Visual Analytics for Electronic Health Records
+        </Heading>
       </header>
       <section>
-        <header className="mt40 wrap_1200">
-          <Heading size="25" style={{ color: colorV1.$grey10 }}>Step 1. Find Patterns</Heading>
-        </header>
+        
         <CohortList />
-        <header className="mt40 wrap_1200">
-          <Heading size="25" style={{ color: colorV1.$grey10 }}>Step 2. Merge Patterns</Heading>
-        </header>
+        
         <Pathway />
         
-        <header className="mt40 wrap_1200">
-          <Heading size="25" style={{ color: colorV1.$grey10 }}>Step 5. Exploration Model Attention</Heading>
-        </header>
+        
         <Heatmap />
       </section>
 

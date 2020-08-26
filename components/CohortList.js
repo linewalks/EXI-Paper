@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Table, Pagination } from 'MDwalks-UI'
+import { Table, Pagination, Heading, variables } from 'MDwalks-UI'
 import SearchBar from '@components/SearchBar';
 import fontStyle from 'MDwalks-UI/src/assets/styles/font.module.sass'
 import _ from 'lodash'
 import styled from 'styled-components'
 import tableDataC1 from '@components/data/dataForCohortListPage1'
+
+const { colorV1 } = variables
 
 const SearchBarBox = styled.article.attrs({
   className: fontStyle.fs14,
@@ -23,7 +25,7 @@ class CohortList extends Component {
     this.state = {
       dataForTable: tableDataC1,
       selectPage: 1,
-      keyword: 'CABG, Troponin-T, Troponin-I',
+      keyword: 'CABG, Troponin',
     }
   }
 
@@ -99,12 +101,20 @@ class CohortList extends Component {
     this.getDataForTable({ ...defaultParam})
   }
 
+  steps= (text) => {
+    return (
+      <header className="mt40 wrap_1200">
+          <Heading size="25" style={{ color: colorV1.$grey10 }}>{text}</Heading>
+        </header>
+    )
+  }
+
 
   render() {
     const { dataForTable, selectPage, keyword } = this.state
     return (
       <div className="wrap_1200">
-
+        {this.steps("Step 1. Find Labels within Patterns")}
         <div className="mt32">
           <SearchBarBox>
             <dl>
@@ -112,7 +122,7 @@ class CohortList extends Component {
               <dd className={`ml14 ${fontStyle.fc_grey09}`}>
                 {
                   dataForTable !== null
-                  && <span>{dataForTable.totalRows.toLocaleString()}</span>
+                  && <span>{dataForTable.totalRows.toLocaleString() }  / 28743</span>
                 }
               </dd>
             </dl>

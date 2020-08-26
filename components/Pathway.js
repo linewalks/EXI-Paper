@@ -17,16 +17,7 @@ import tableDataP from '@components/data/dataForPatientList'
 
 const { colorV1 } = variables
 
-const SearchBarBox = styled.article.attrs({
-  className: fontStyle.fs14,
-})`
-  display: flex;
-  align-items: center;
 
-  dl, dt, dd {
-    display: inline-block;
-  }
-`
 
 class Pathway extends Component {
   constructor(props) {
@@ -87,6 +78,14 @@ class Pathway extends Component {
     })
   }
 
+  steps = (text) => {
+    return (
+      <header className="mt40 wrap_1200">
+        <Heading size="25" style={{ color: colorV1.$grey10 }}>{text}</Heading>
+      </header>
+    )
+  }
+
   changePage = (page = 1) => {
     const selectedNodes = this.state.selectedNodes
     const param = {
@@ -101,12 +100,11 @@ class Pathway extends Component {
     }, () => this.getDataForTable(param))
   }
 
-  getTableId = (text) => text.replace(/\s+/, '')[0].toLowerCase() + text.replace(/\s+/, '').slice(1)
-
   render() {
     const { sankeyData, selectedNodes, dataForTable, selectPage } = this.state
     return (
       <div>
+        {this.steps("Step 2. Patient Labeling by Selecting Pathway in the Merged Patterns")}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
 
           {
@@ -130,25 +128,16 @@ class Pathway extends Component {
           }
 
         </div>
-        <header className="mt40 wrap_1200">
-          <Heading size="25" style={{ color: colorV1.$grey10 }}>Step 3. Patient Identification by Selecting Pathway</Heading>
-        </header>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <SelectedCard selectedElement={selectedNodes} isLastHighlighted={true} />
         </div>
         <div className="wrap_1200">
-          <p className={`${fontStyle.fs14} ${fontStyle.fc_grey08}`}>Patient List</p>
-          <SearchBarBox>
-            <dl>
-              <dt className={fontStyle.fc_grey08}>Patient</dt>
-              <dd className={`ml14 ${fontStyle.fc_grey09}`}>
-                {
-                  dataForTable !== null
-                && <span>{dataForTable.totalRows.toLocaleString()} / {tableDataP.totalRows.toLocaleString()}</span>
-                }
-              </dd>
-            </dl>
-          </SearchBarBox>
+          {
+            dataForTable !== null
+            && <Heading size="20" style={{ color: colorV1.$grey10 }}>
+              {dataForTable.totalRows.toLocaleString() + " / " + 22495}</Heading>
+
+          }
           <div className="mt16">
             {
 
@@ -177,39 +166,38 @@ class Pathway extends Component {
 
           </div>
         </div>
-        <header className="mt40 wrap_1200">
-          <Heading size="25" style={{ color: colorV1.$grey10 }}>Step 4. Training Model with Selected Patients</Heading>
-        </header>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <SelectBox>
-          <select>
-            <option value="concept_id">LSTM layer size(s)</option>
-            <option value="concept_id">128</option>
-            <option value="kcd">64</option>
-          </select>
-        </SelectBox>
-        <SelectBox>
-          <select>
-            <option value="concept_id">Number of Epochs</option>
-            <option value="concept_id">5</option>
-            <option value="kcd">10</option>
-          </select>
-        </SelectBox>
-        <SelectBox>
-          <select>
-            <option value="concept_id">Batch Size</option>
-            <option value="concept_id">128</option>
-            <option value="kcd">256</option>
-          </select>
-        </SelectBox>
-        <SelectBox>
-          <select>
-            <option value="concept_id">Learning Rate</option>
-            <option value="concept_id">1e-2</option>
-            <option value="kcd">1e-3</option>
-          </select>
-        </SelectBox>
-        <Button variant="primary">Train Model</Button>
+        {this.steps("Step 3. Training Model with Labeled Patients")}
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '25px' }}>
+          <Button>Load preprocessed data</Button>
+          <SelectBox>
+            <select>
+              <option value="0">LSTM layer size(s)</option>
+              <option value="128">128</option>
+              <option value="64">64</option>
+            </select>
+          </SelectBox>
+          <SelectBox>
+            <select>
+              <option value="0">Number of Epochs</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+          </SelectBox>
+          <SelectBox>
+            <select>
+              <option value="0">Batch Size</option>
+              <option value="128">128</option>
+              <option value="256">256</option>
+            </select>
+          </SelectBox>
+          <SelectBox>
+            <select>
+              <option value="0">Learning Rate</option>
+              <option value="2">1e-2</option>
+              <option value="3">1e-3</option>
+            </select>
+          </SelectBox>
+          <Button variant="primary">Train Model</Button>
         </div>
       </div>
     )
