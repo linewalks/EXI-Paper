@@ -114,7 +114,7 @@ class CohortList extends Component {
     const { dataForTable, selectPage, keyword } = this.state
     return (
       <div className="wrap_1200">
-        {this.steps("Step 1. Find Labels within Patterns")}
+        {this.steps("Step 1. Find Labels within Pathways")}
         <div className="mt32">
           <SearchBarBox>
             <dl>

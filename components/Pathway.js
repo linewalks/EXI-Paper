@@ -104,7 +104,7 @@ class Pathway extends Component {
     const { sankeyData, selectedNodes, dataForTable, selectPage } = this.state
     return (
       <div>
-        {this.steps("Step 2. Patient Labeling by Selecting Pathway in the Merged Patterns")}
+        {this.steps("Step 2. Patient Labeling by Selecting Events in the Merged Pathway")}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
 
           {

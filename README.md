@@ -36,3 +36,10 @@ Use of electronic health record (EHR) data for planning is a key area of researc
 
 5. `http://localhost:3000`
 
+
+---
+
+## Special Thanks to 
+- [Yohan Lee](https://github.com/orgs/linewalks/people/jik0090)
+- [Yuna Lee](https://github.com/orgs/linewalks/people/yuna12)
+- Youngji Kwon
