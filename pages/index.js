@@ -25,6 +25,7 @@ const PathwayPage = () => {
         <Heading size="30" style={{ color: colorV1.$grey10 }}>
           Boosting Patient Labeling Process with Visual Analytics for Electronic Health Records
         </Heading>
+        <h3>Assumptions: Medical experts would like to predict unplanned cardiovascular surgery.</h3>
       </header>
       <section>
         
