@@ -6,7 +6,6 @@ module.exports = {
       alias: {
         '@public': path.join(__dirname, 'public'),
         '@components': path.join(__dirname, 'components'),
-        '@layouts': path.join(__dirname, 'layouts'),
         '@contexts': path.join(__dirname, 'contexts'),
       },
       ...config.resolve
