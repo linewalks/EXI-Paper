@@ -16,7 +16,6 @@
           "@public": "./public",
           "@components": "./components",
           "@layouts": "./layouts",
-          "@helpers": "./helpers",
           "@contexts": "./contexts"
         }
       }

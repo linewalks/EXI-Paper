@@ -55,7 +55,6 @@
     "moduleNameMapper": {
       "^@components(.*)$": "<rootDir>/components/$1",
       "^@public(.*)$": "<rootDir>/public/$1",
-      "^@helpers(.*)$": "<rootDir>/helpers/$1",
       "^@Table(.*)$": "<rootDir>/src/components/table/$1",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less|sass)$": "identity-obj-proxy"
