@@ -3,7 +3,6 @@ import { SelectBox, Heading, variables } from 'MDwalks-UI'
 import grpHeatmapData from '@components/data/dataForHeatmap';
 import p9 from '@components/data/dataForHeatmap9';
 import p13 from '@components/data/dataForHeatmap13';
-import p102 from '@components/data/dataForHeatmap102';
 import metadata from '@components/data/dataForMetadata';
 import * as core from 'd3';
 import _ from 'lodash';
@@ -184,8 +183,6 @@ class Heatmap extends Component {
       p = p9
     else if (event.target.value == 13)
       p = p13
-    else if (event.target.value == 102)
-      p = p102
     this.setState({
       data: p
     });
@@ -211,7 +208,6 @@ class Heatmap extends Component {
               <option value={0}>All Patients</option>
               <option value={9}>9</option>
               <option value={13}>13</option>
-              <option value={102}>102</option>
             </select>
           </SelectBox>
 
