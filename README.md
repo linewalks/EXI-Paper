@@ -1,9 +1,9 @@
 ## Boosting Patient Labeling Process with Visual Analytics for Electronic Health Records
 
-Cinyoung Hur1, JeongA Wi2, YoungBin Kim2,*
+Cinyoung Hur 1, JeongA Wi 2, YoungBin Kim 2,*
 
-1 Linewalks, 8F, 5, Teheran-ro 14-gil, Gangnam-gu, Seoul, 06235 Republic of Korea
-2 Graduate School of Advanced Imaging Science, Multimedia & Film, Chung-Ang University 84, Heukseok-ro, Dongjak-gu, Seoul, 06974 Republic of Korea
+1. Linewalks, 8F, 5, Teheran-ro 14-gil, Gangnam-gu, Seoul, 06235 Republic of Korea
+2. Graduate School of Advanced Imaging Science, Multimedia & Film, Chung-Ang University 84, Heukseok-ro, Dongjak-gu, Seoul, 06974 Republic of Korea
 *ybkim85@cau.ac.kr
 
 ### ABSTRACT
