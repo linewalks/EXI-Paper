@@ -1,37 +1,28 @@
 export default {
   headers: ['pattern', 'support'],
-  rowData: [{ 'pattern': 'Chemistry Troponin T -> CABG', 'support': 0.051 },
-  { 'pattern': 'Chemistry Troponin T -> ECG -> CABG', 'support': 0.046 },
-  { 'pattern': 'Chemistry Troponin T -> CABG -> Aspirin', 'support': 0.046 },
-  { 'pattern': 'emergency -> Chemistry Troponin T -> CABG', 'support': 0.05 },
-  {
-    'pattern': 'emergency -> ischemic_hd -> Chemistry Troponin T -> CABG',
-    'support': 0.049
-  },
-  { 'pattern': 'ischemic_hd -> Chemistry Troponin T -> CABG', 'support': 0.05 },
-  {
-    'pattern': 'emergency -> Chemistry Troponin T -> ECG -> CABG',
-    'support': 0.045
-  },
-  {
-    'pattern': 'emergency -> Chemistry Troponin T -> CABG -> Aspirin',
-    'support': 0.045
-  },
-  {
-    'pattern': 'emergency -> ischemic_hd -> Chemistry Troponin T -> ECG -> CABG',
-    'support': 0.044
-  },
-  {
-    'pattern': 'emergency -> ischemic_hd -> Chemistry Troponin T -> CABG -> Aspirin',
-    'support': 0.044
-  },
-  {
-    'pattern': 'ischemic_hd -> Chemistry Troponin T -> ECG -> CABG',
-    'support': 0.045
-  },
-  {
-    'pattern': 'ischemic_hd -> Chemistry Troponin T -> CABG -> Aspirin',
-    'support': 0.046
-  }],
+  rowData: [{'pattern': 'Chemistry: Troponin T -> CABG',
+  'support': '806 / 22495 (0.036)'},
+ {'pattern': 'Chemistry: Troponin T -> ECG -> CABG',
+  'support': '723 / 22495 (0.032)'},
+ {'pattern': 'Chemistry: Troponin T -> CABG -> Aspirin',
+  'support': '731 / 22495 (0.032)'},
+ {'pattern': 'emergency -> Chemistry: Troponin T -> CABG',
+  'support': '786 / 22495 (0.035)'},
+ {'pattern': 'emergency -> ischemic_hd -> Chemistry: Troponin T -> CABG',
+  'support': '767 / 22495 (0.034)'},
+ {'pattern': 'ischemic_hd -> Chemistry: Troponin T -> CABG',
+  'support': '787 / 22495 (0.035)'},
+ {'pattern': 'emergency -> Chemistry: Troponin T -> ECG -> CABG',
+  'support': '708 / 22495 (0.031)'},
+ {'pattern': 'emergency -> Chemistry: Troponin T -> CABG -> Aspirin',
+  'support': '713 / 22495 (0.032)'},
+ {'pattern': 'emergency -> ischemic_hd -> Chemistry: Troponin T -> ECG -> CABG',
+  'support': '691 / 22495 (0.031)'},
+ {'pattern': 'emergency -> ischemic_hd -> Chemistry: Troponin T -> CABG -> Aspirin',
+  'support': '700 / 22495 (0.031)'},
+ {'pattern': 'ischemic_hd -> Chemistry: Troponin T -> ECG -> CABG',
+  'support': '706 / 22495 (0.031)'},
+ {'pattern': 'ischemic_hd -> Chemistry: Troponin T -> CABG -> Aspirin',
+  'support': '718 / 22495 (0.032)'}],
   totalRows: 12,
 };
