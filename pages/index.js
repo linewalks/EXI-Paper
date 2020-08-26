@@ -21,7 +21,7 @@ const PathwayPage = () => {
           }
         `}
       </style>
-      <header className="mt40 wrap_1200">
+      <header className="wrap_1200">
         <Heading size="30" style={{ color: colorV1.$grey10 }}>
           Boosting Patient Labeling Process with Visual Analytics for Electronic Health Records
         </Heading>

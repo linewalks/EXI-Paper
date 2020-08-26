@@ -37,11 +37,6 @@
     "lint:fix": "eslint ./components/**/*.js --fix",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn lint && yarn test"
-    }
-  },
   "browserslist": [
     ">0.3%",
     "not ie 11",
@@ -78,7 +73,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "husky": "^4.2.3",
     "jest": "24.7.1",
     "mutationobserver-shim": "^0.3.3"
   }
