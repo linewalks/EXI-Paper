@@ -4,7 +4,7 @@
     "license": "MIT",
     "scripts": {
         "dev": "cd app && yarn dev",
-        "build": "cd app && next build",
+        "build": "cd app && yarn build",
         "start": "cd app && yarn start"
       }
 }
