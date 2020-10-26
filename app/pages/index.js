@@ -9,6 +9,7 @@ const { colorV1 } = variables
 const Pathway = dynamic(() => import('@components/Pathway'))
 const CohortList = dynamic(() => import('@components/CohortList'))
 const Heatmap = dynamic(() => import('@components/Heatmap'))
+const Treemap = dynamic(() => import('@components/Treemap'))
 
 const PathwayPage = () => {
 
@@ -36,6 +37,8 @@ const PathwayPage = () => {
         
         
         <Heatmap />
+
+        <Treemap />
       </section>
 
     </div>
